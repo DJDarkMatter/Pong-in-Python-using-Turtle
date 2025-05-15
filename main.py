@@ -4,10 +4,11 @@
 # Setup:
 import turtle # Turtle library
 import math # Maths operations library
-tommy = turtle.Turtle() # Define turtle tommy
-tommy.speed(10000) # Turtle speed
-tommy.hideturtle() # Hide cursor
+import random
 screen = turtle.Screen() # Initialize screen for keyboardIn
+tommy = turtle.Turtle() # Define turtle tommy
+tommy.speed(0) # Turtle speed
+tommy.hideturtle() # Hide cursor
 
 # Functions:
 
@@ -28,10 +29,10 @@ def d(): # Define function called when rightarrow is hit
 
 # Loop
 def loop(): # Define main loop function gets called in last line of main loop
+  if looprunning is True:
     
     screen.listen() # Listen for keypresses
-    screen.ontimer(loop, 1) # Restart loop with delay of 1s --> gamespeed
-
+    screen.ontimer(loop, 1) # Restart loop with delay of 1ms--> gamespeed
     turtle.mainloop() # Keep window open to listen for keypresses
 
 # Keypresses:
@@ -40,4 +41,5 @@ screen.onkey(a, "Left") # Call a function if leftarrow detected
 screen.onkey(s, "Down") # Call s function if downarrow detected
 screen.onkey(d, "Right") # Call d function if rightarrow detected
 
+looprunning = True
 loop()
