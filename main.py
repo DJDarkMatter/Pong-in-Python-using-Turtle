@@ -1,5 +1,6 @@
 # Ivan N. presenting....
 # Pong in Py
+# formula for mirroring heading   -angle + 360
 
 # Setup:
 import turtle # Turtle library
