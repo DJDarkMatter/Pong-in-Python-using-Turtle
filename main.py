@@ -36,13 +36,13 @@ def delball():
   
 # Keypresses:
 def w(): # Define function called when w is hit
-
+  pass
 def s(): # Define function called when s is hit
-
+  pass
 def u(): # Define function called when downarrow is hit
-
+  pass
 def d(): # Define function called when rightarrow is hit
-
+  pass
 def r(): # Define reset function
   
 
