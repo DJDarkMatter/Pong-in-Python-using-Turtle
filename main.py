@@ -35,18 +35,16 @@ def delball():
   tommy.backward(6) # Move back to center
   
 # Keypresses:
-def w(): # Define function called when uparrow is hit
-  if tommy.heading() == 0 or tommy.heading() == 180: # If facing opposite way
-    tommy.setheading(90) # Turn up
-def a(): # Define function called when leftarrow is hit
-  if tommy.heading() == 90 or tommy.heading() == 270: # If facing opposite way
-    tommy.setheading(180) # Turn left
-def s(): # Define function called when downarrow is hit
-  if tommy.heading() == 180 or tommy.heading() == 0: # If facing opposite way
-    tommy.setheading(270) # Turn down
+def w(): # Define function called when w is hit
+
+def s(): # Define function called when s is hit
+
+def u(): # Define function called when downarrow is hit
+
 def d(): # Define function called when rightarrow is hit
-  if tommy.heading() == 270 or tommy.heading() == 90: # If facing opposite way
-    tommy.setheading(0) # Turn right
+
+def r(): # Define reset function
+  
 
 # Loop
 def loop(): # Define main loop function gets called in last line of main loop
@@ -60,10 +58,11 @@ def loop(): # Define main loop function gets called in last line of main loop
     screen.ontimer(loop, 5)# Restart loop with delay of 1ms
 
 # Keypresses:
-screen.onkey(w, "Up") # Call w function if uparrow detected
-screen.onkey(a, "Left") # Call a function if leftarrow detected
-screen.onkey(s, "Down") # Call s function if downarrow detected
-screen.onkey(d, "Right") # Call d function if rightarrow detected
+screen.onkey(w, "w") # Call w function if uparrow detected
+screen.onkey(s, "s") # Call s function if leftarrow detected
+screen.onkey(u, "Up") # Call u function if downarrow detected
+screen.onkey(d, "Down") # Call d function if rightarrow detected
+screen.onkey(r, "r") # Call r function if "r" detected
 
 loop()
 screen.mainloop()
