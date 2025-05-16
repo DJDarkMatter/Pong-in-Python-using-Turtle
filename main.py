@@ -11,7 +11,15 @@ tommy = turtle.Turtle() # Define turtle tommy
 tommy.penup()
 tommy.speed(0) # Turtle speed
 tommy.hideturtle() # Hide cursor
-speed = 5
+lefty = turtle.Turtle() # Define turtle lefty
+lefty.penup()
+lefty.speed(0) # Turtle speed
+lefty.hideturtle() # Hide cursor
+righty = turtle.Turtle() # Define turtle righty
+righty.penup()
+righty.speed(0) # Turtle speed
+righty.hideturtle() # Hide cursor
+speed = 1
 looprunning = True
 
 # Functions:
@@ -44,7 +52,7 @@ def u(): # Define function called when downarrow is hit
 def d(): # Define function called when rightarrow is hit
   pass
 def r(): # Define reset function
-  
+  pass
 
 # Loop
 def loop(): # Define main loop function gets called in last line of main loop
