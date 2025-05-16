@@ -6,12 +6,33 @@ import turtle # Turtle library
 import math # Maths operations library
 import random
 screen = turtle.Screen() # Initialize screen for keyboardIn
+screen.listen() # Listen for keypresses
 tommy = turtle.Turtle() # Define turtle tommy
+tommy.penup()
 tommy.speed(0) # Turtle speed
 tommy.hideturtle() # Hide cursor
+speed = 5
+looprunning = True
 
 # Functions:
 
+def ball():
+  tommy.forward(5)
+  tommy.left(90) # Move to side so circle is on center
+  tommy.begin_fill() # Color start
+  tommy.circle(5) # Draw apple
+  tommy.end_fill() # Color stop
+  tommy.right(90)
+  tommy.backward(5) # Move back to center
+
+def delball():
+  tommy.forward(6)
+  tommy.left(90) # Move to side so circle is on center
+  tommy.begin_fill() # Color start
+  tommy.circle(6) # Draw apple
+  tommy.end_fill() # Color stop
+  tommy.right(90)
+  tommy.backward(6) # Move back to center
   
 # Keypresses:
 def w(): # Define function called when uparrow is hit
@@ -30,10 +51,13 @@ def d(): # Define function called when rightarrow is hit
 # Loop
 def loop(): # Define main loop function gets called in last line of main loop
   if looprunning is True:
+    tommy.fillcolor("white")
+    delball()
     
-    screen.listen() # Listen for keypresses
-    screen.ontimer(loop, 1) # Restart loop with delay of 1ms--> gamespeed
-    turtle.mainloop() # Keep window open to listen for keypresses
+    tommy.forward(speed)
+    tommy.color("black")
+    ball()
+    screen.ontimer(loop, 5)# Restart loop with delay of 1ms
 
 # Keypresses:
 screen.onkey(w, "Up") # Call w function if uparrow detected
@@ -41,5 +65,5 @@ screen.onkey(a, "Left") # Call a function if leftarrow detected
 screen.onkey(s, "Down") # Call s function if downarrow detected
 screen.onkey(d, "Right") # Call d function if rightarrow detected
 
-looprunning = True
 loop()
+screen.mainloop()
